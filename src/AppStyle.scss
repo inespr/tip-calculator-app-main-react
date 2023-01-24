@@ -21,14 +21,14 @@ body{
 h1{
     text-align: center;
     letter-spacing: 10px;
-    color: $strongblue ;
+    color: $strongblue;
 }
 
 .container{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     background-color: $white;
-    width: 900px;
+    max-width: 900px;
     padding: 28px;
     border-radius: $radio;
     align-items: center;
@@ -121,12 +121,11 @@ input[type=reset].reset{
 
 input[type=reset].reset:active{
     border: none;
-    width: 110px;
+    max-width: 110px;
     margin-bottom: 10px;
     font-size: 24px;
     background-color: $primary;
     color: $strongblue;
-    width: 350px;
     border-radius: 5px;
     margin-top: 100px;
 }
@@ -178,4 +177,44 @@ input[type=reset].reset:active{
     color: red;
     margin-top: -37px;
     visibility: hidden;
+}
+
+@media screen and (max-width: 1024px){
+    .container{
+        grid-template-columns: repeat(1, 1fr);
+        max-width: 600px;
+    }
+    .container2{
+        max-width: 300px;
+    }
+    .column-result{
+        max-width: 200px;
+    }
+}
+
+@media screen and (max-width: 375px){
+    .container{
+        grid-template-columns: repeat(1, 1fr);
+        max-width: 310px;
+        min-width: 270px;
+    }
+    .container2{
+        max-width: fit-content;
+
+    }
+    .column-result{
+        max-width: 200px;
+    }
+    input[type="number"]:not(.custom){
+        max-width: fit-content;
+    }
+    input[type="button"], .custom{
+        display: grid;
+
+    }
+    .row{
+        display: flex;
+        flex-direction: column;
+    }
+  
 }
