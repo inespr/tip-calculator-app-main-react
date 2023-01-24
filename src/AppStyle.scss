@@ -182,17 +182,21 @@ input[type=reset].reset:active{
 @media screen and (max-width: 1024px){
     .container{
         grid-template-columns: repeat(1, 1fr);
-        max-width: 600px;
+        max-width: 500px;
     }
     .container2{
-        max-width: 300px;
+        max-width: 500px;
+        min-width: 300px;
+        justify-content: center;
     }
     .column-result{
-        max-width: 200px;
+        justify-content: space-around;
+        max-width: 300px;
     }
+   
 }
 
-@media screen and (max-width: 375px){
+@media screen and (max-width: 450px){
     .container{
         grid-template-columns: repeat(1, 1fr);
         max-width: 310px;
@@ -200,12 +204,15 @@ input[type=reset].reset:active{
     }
     .container2{
         max-width: fit-content;
+        min-width: 200px;
 
     }
     .column-result{
-        max-width: 200px;
+        max-width: 300px;
     }
     input[type="number"]:not(.custom){
+        display: flex;
+        align-self: center;
         max-width: fit-content;
     }
     input[type="button"], .custom{
@@ -215,6 +222,49 @@ input[type=reset].reset:active{
     .row{
         display: flex;
         flex-direction: column;
+    }
+  
+}
+
+@media screen and (max-width: 350px){
+
+    .container{
+        grid-template-columns: repeat(1, 1fr);
+        max-width: 310px;
+        min-width: 270px;
+    }
+    .container2{
+        max-width:200px;
+        min-width: 100px;
+
+    }
+    .column-result{
+        max-width: 300px;
+    }
+    input[type="number"]:not(.custom){
+        display: flex;
+        align-self: center;
+        max-width: fit-content;
+    }
+
+    .row{
+        display: flex;
+        flex-direction: column;
+    }
+    .buttons{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+     
+    }
+    input[type="button"], .custom{
+        max-width: 100px;
+    }
+    .reset{
+        max-width: 200px;
+    }
+    .row > p{
+        padding-left: 20px;
     }
   
 }
