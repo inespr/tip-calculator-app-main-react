@@ -13,7 +13,6 @@ import { useState } from 'react';
       console.log(bill);
       console.log(tip);
       console.log(people);
-
     }
       return (
         <div className='App'>
@@ -71,6 +70,4 @@ import { useState } from 'react';
       </div>
     );
   }
-      
-
 export default App;
