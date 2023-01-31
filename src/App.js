@@ -1,21 +1,42 @@
 import "./AppStyle.scss";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const App = () => {
-  const [bill, setBill] = useState();
+  const [bill, setBill] = useState("");
 
-  const [tip, setTip] = useState();
+  const [tip, setTip] = useState("");
 
-  const [people, setPeople] = useState();
+  const [people, setPeople] = useState("");
 
-  //state tipo amount y total
+  const [result, setResult] = useState(0);
 
-  if (bill || people || tip) {
+  const [resultTotal, setResulttotal] = useState(0);
 
-    console.log(bill);
-    console.log(tip);
-    console.log(people);
-  }
+  function reset() {
+    setBill("");
+    setTip("");
+    setPeople("");
+    setResult(0);
+    setResulttotal(0);
+    }
+
+
+    useEffect(()=>{
+      
+      if(bill, tip, people){
+        console.log(bill);
+        console.log(tip);
+        console.log(people);
+        const tipamount = ((bill*tip)/100)/people;
+        setResult(tipamount);
+        const total = (tipamount + (bill/people))
+        setResulttotal(total);
+      }
+      
+    },[bill,tip,people]);
+
+    
+
   return (
     <div className="App">
       <div className="h1">
@@ -110,7 +131,6 @@ const App = () => {
                 pattern="^[0-9]+"
               ></input>
             </div>
-       
             <p>Number of People</p>
             <p className="error" id="error">
               Can't be zero or decimal
@@ -149,10 +169,10 @@ const App = () => {
             </div>
             <div className="row-result2">
               <div className="result" id="resultTipAmount">
-                $0.00
+                ${result.toFixed(2)}
               </div>
               <div className="result" id="resultTotal">
-                $0.00
+                ${resultTotal.toFixed(2)}
               </div>
             </div>
           </div>
@@ -161,7 +181,7 @@ const App = () => {
               type={"reset"}
               className="reset"
               value={"RESET"}
-              //onClick={() => window.location.reload()}
+              onClick={reset}
             />
           </div>
         </div>

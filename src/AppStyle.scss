@@ -111,7 +111,7 @@ button:active{
 .custom{
     text-align: center;
     border: none;
-    width: 107px;
+    max-width: 140px;
     margin-bottom: 10px;
     font-size: 24px;
     border-radius: 5%;
@@ -119,10 +119,10 @@ button:active{
 }
 
 .column{
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
 .row{
@@ -231,12 +231,15 @@ input[type=reset].reset:active{
 
     }
     input[type=number]:not(.custom){
-        min-width: 0px;
+        max-width: 410px;
+    }
+    .custom{
+        max-width: 219px;
     }
    
 }
 
-@media screen and (max-width: 450px){
+@media screen and (max-width: 500px){
     .container{
         grid-template-columns: repeat(1, 1fr);
         max-width: 310px;
@@ -253,15 +256,15 @@ input[type=reset].reset:active{
     input[type="number"]:not(.custom){
         display: flex;
         align-self: center;
-        max-width: 250px;
+        max-width: 300px;
     }
-    input[type="button"], .custom{
-        display: grid;
 
-    }
     .row{
         display: flex;
         flex-direction: column;
+    }
+    .custom{
+        max-width: 150px;
     }
   
 }
@@ -292,9 +295,6 @@ input[type=reset].reset:active{
         flex-direction: column;
     }
 
-    input[type="button"], .custom{
-        max-width: 100px;
-    }
     .reset{
         max-width: 200px;
     }
