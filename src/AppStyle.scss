@@ -26,9 +26,7 @@ h1{
 }
 
 .container{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
+    display: flex;
     background-color: $white;
     max-width: 900px;
     padding: 28px;
@@ -36,6 +34,7 @@ h1{
     align-items: center;
     justify-content: center;
     margin: auto;
+    gap: 50px;
 }
 
 .elemento{
@@ -48,16 +47,16 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 }
 
 input[type=number]:not(.custom){ 
-  background-color: $lightgray;
-  border: none;
-  margin: 0; 
-  width: 100%;
-  text-align: right;
-  font-size: 24px;
-  border-radius: 5px;
-  padding: 2%;
-  color: $strongblue;
-  font-weight: bold;
+    background-color: $lightgray;
+    border: none;
+    margin: 0; 
+    width:100%;
+    text-align: right;
+    font-size: 24px;
+    border-radius: 5px;
+    padding: 2%;
+    color: $strongblue;
+    font-weight: bold;
 }
 
 input::placeholder{ color: $transparentgray}
@@ -66,11 +65,15 @@ input[type=number]:focus{
     outline: 2px solid $primary;
 }
 
+.input-error{
+    outline: 2px solid red;
+}
+
 .input-wrapper {
     position: relative;
- }
- 
- .input-icon{
+}
+
+.input-icon{
     color: $transparentgray;
     position: absolute;
     width: 20px;
@@ -78,9 +81,15 @@ input[type=number]:focus{
     left: 12px;
     top: 50%;
     transform: translateY(-50%);
- }
- 
- button{
+}
+
+.input-block{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+button{
     border: none;
     margin-bottom: 10px;
     font-size: 24px;
@@ -90,10 +99,9 @@ input[type=number]:focus{
 }
 
 .buttons{
+    grid-gap: 15px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 5px;
-    align-items: center;
 }
 
 button:hover{
@@ -111,7 +119,6 @@ button:active{
 .custom{
     text-align: center;
     border: none;
-    max-width: 140px;
     margin-bottom: 10px;
     font-size: 24px;
     border-radius: 5%;
@@ -125,16 +132,20 @@ button:active{
     width: 100%;
 }
 
+.column-container2{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+}
+
 .row{
     display: flex;
     flex-direction: column;
     padding-bottom: 10%;
 }
 
-.columnbutton{
-    display: flex;
-    justify-content: space-between;
-}
 
 input[type=reset].reset{
     border: none;
@@ -183,38 +194,31 @@ input[type=reset].reset:active{
     flex-direction: column;
     background-color: $strongblue;
     padding: 41px;
-    width: 320px;
+    max-width:320px;
     border-radius: $radio;
 }
 
-.row-result1{
-    display: flex;
-    flex-direction: column;
-}
-
-.row-result2{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-
-}
-
-.row1{
-    display: grid;
-}
-
 .error{
-    text-align: right;
+    visibility: visible;
     color: red;
-    margin-top: -37px;
+}
+
+.error-hidden{
+
     visibility: hidden;
+}
+
+.error-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 @media screen and (max-width: 1024px){
     .container{
         grid-template-columns: repeat(1, 1fr);
         max-width: 450px;
-        padding: 10px;
+        padding: 40px;
 
     }
     .container2{
@@ -228,15 +232,11 @@ input[type=reset].reset:active{
     }
     .buttons{
         grid-template-columns: repeat(2, 1fr);
-
+        grid-area: 50% 50%;
     }
     input[type=number]:not(.custom){
         max-width: 410px;
     }
-    .custom{
-        max-width: 219px;
-    }
-   
 }
 
 @media screen and (max-width: 500px){
@@ -263,10 +263,6 @@ input[type=reset].reset:active{
         display: flex;
         flex-direction: column;
     }
-    .custom{
-        max-width: 150px;
-    }
-  
 }
 
 @media screen and (max-width: 350px){
@@ -301,5 +297,4 @@ input[type=reset].reset:active{
     .row > p{
         padding-left: 20px;
     }
-  
 }
