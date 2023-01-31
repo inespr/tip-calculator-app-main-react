@@ -60,7 +60,7 @@ const App = () => {
         <h1>TTER</h1>
       </div>
       <div className="container">
-        <div className="column">
+        <div >
           <p>Bill</p>
           <div className="input-wrapper">
             <input
@@ -179,7 +179,7 @@ const App = () => {
             </svg>
           </div>
         </div>
-        <div className="column-container2">
+        <div >
           <div className="container2">
             <div className="column-result">
               <div className="row-result1">

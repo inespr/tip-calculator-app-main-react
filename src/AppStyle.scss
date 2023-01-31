@@ -16,7 +16,6 @@ $radio: 20px;
 
 body{
     background-color: $lightblue;
-    width: auto;
 }
 
 h1{
@@ -37,10 +36,7 @@ h1{
     gap: 50px;
 }
 
-.elemento{
-    display: flex;
-    flex-direction: row;
-}
+
 
 input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button{
     -webkit-appearance: none;
@@ -83,12 +79,6 @@ input[type=number]:focus{
     transform: translateY(-50%);
 }
 
-.input-block{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
 button{
     border: none;
     margin-bottom: 10px;
@@ -99,9 +89,10 @@ button{
 }
 
 .buttons{
-    grid-gap: 15px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 7px;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+    justify-content: start;
 }
 
 button:hover{
@@ -125,13 +116,6 @@ button:active{
     background-color: $lightgray;
 }
 
-.column{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    width: 100%;
-}
-
 .column-container2{
     display: flex;
     flex-direction: column;
@@ -139,13 +123,6 @@ button:active{
     width: 100%;
     align-items: center;
 }
-
-.row{
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 10%;
-}
-
 
 input[type=reset].reset{
     border: none;
@@ -216,7 +193,7 @@ input[type=reset].reset:active{
 
 @media screen and (max-width: 1024px){
     .container{
-        grid-template-columns: repeat(1, 1fr);
+        flex-direction: column;
         max-width: 450px;
         padding: 40px;
 
@@ -231,7 +208,7 @@ input[type=reset].reset:active{
         max-width: 300px;
     }
     .buttons{
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 50% 50%;
         grid-area: 50% 50%;
     }
     input[type=number]:not(.custom){
@@ -241,7 +218,7 @@ input[type=reset].reset:active{
 
 @media screen and (max-width: 500px){
     .container{
-        grid-template-columns: repeat(1, 1fr);
+        flex-direction: column;
         max-width: 310px;
         min-width: 270px;
     }
@@ -268,7 +245,7 @@ input[type=reset].reset:active{
 @media screen and (max-width: 350px){
 
     .container{
-        grid-template-columns: repeat(1, 1fr);
+        flex-direction: column;
         max-width: 310px;
         min-width: 310px;
     }
@@ -286,15 +263,7 @@ input[type=reset].reset:active{
         max-width: fit-content;
     }
 
-    .row{
-        display: flex;
-        flex-direction: column;
-    }
-
     .reset{
         max-width: 200px;
-    }
-    .row > p{
-        padding-left: 20px;
     }
 }
