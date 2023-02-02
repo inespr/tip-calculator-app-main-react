@@ -12,6 +12,8 @@ $radio: 20px;
 
 *{
     font-family: "Space Mono";
+    font-weight: 800;
+    color: $strongblue;
 }
 
 body{
@@ -19,6 +21,11 @@ body{
 }
 
 h1{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    margin-bottom: 10px;
+    align-items: center;
     text-align: center;
     letter-spacing: 10px;
     color: $strongblue;
@@ -175,6 +182,10 @@ input[type=reset].reset:active{
     border-radius: $radio;
 }
 
+.text-result{
+    color: $white;
+}
+
 .error{
     visibility: visible;
     color: red;
@@ -201,7 +212,6 @@ input[type=reset].reset:active{
     .container2{
         display: flex;
         max-width: 500px;
-        min-width: 300px;
         justify-content: center;
     }
     .column-result{
@@ -219,13 +229,11 @@ input[type=reset].reset:active{
 @media screen and (max-width: 500px){
     .container{
         flex-direction: column;
-        max-width: 310px;
-        min-width: 270px;
+        max-width: 410px;
+        min-width: 400px;
     }
     .container2{
         max-width: 200px;
-        min-width: 100px;
-
     }
     .column-result{
         max-width: 300px;
@@ -233,7 +241,7 @@ input[type=reset].reset:active{
     input[type="number"]:not(.custom){
         display: flex;
         align-self: center;
-        max-width: 300px;
+        min-width: 300;
     }
 
     .row{
@@ -242,28 +250,3 @@ input[type=reset].reset:active{
     }
 }
 
-@media screen and (max-width: 350px){
-
-    .container{
-        flex-direction: column;
-        max-width: 310px;
-        min-width: 310px;
-    }
-    .container2{
-        max-width:200px;
-        min-width: 200px;
-
-    }
-    .column-result{
-        max-width: 300px;
-    }
-    input[type="number"]:not(.custom){
-        display: flex;
-        align-self: center;
-        max-width: fit-content;
-    }
-
-    .reset{
-        max-width: 200px;
-    }
-}

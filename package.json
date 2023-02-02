@@ -4,16 +4,19 @@
   "private": true,
   "homepage": "https://inespr.github.io/tip-calculator-app-main-react/",
   "dependencies": {
+    "fs": "^0.0.1-security",
     "react": "^18.2.0",
+    "react-app-rewired": "^2.2.1",
     "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
-    "sass": "^1.57.1"
+    "react-scripts": "^5.0.1",
+    "sass": "^1.58.0",
+    "util": "^0.12.5"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
     "deploy": "gh-pages -d build",
-    "eject": "react-scripts eject"
+    "eject": "react-app-rewired eject"
   },
   "eslintConfig": {
     "extends": [

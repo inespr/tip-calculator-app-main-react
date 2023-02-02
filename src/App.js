@@ -1,5 +1,6 @@
 import "./AppStyle.scss";
 import React, { useState, useEffect} from "react";
+import { Value } from "sass";
 
 const App = () => {
   const [bill, setBill] = useState("");
@@ -11,6 +12,8 @@ const App = () => {
   const [result, setResult] = useState(0);
 
   const [resultTotal, setResulttotal] = useState(0);
+
+
 
   function reset() {
     setBill("");
@@ -32,6 +35,7 @@ const App = () => {
       setResult(tipamount);
       const total = tipamount + bill / people;
       setResulttotal(total);
+
       if (bill <= 0){
         console.log(bill);
         document.getElementById("bill").classList.add('input-error');
@@ -51,6 +55,7 @@ const App = () => {
       }
       
     }
+
   }, [bill, tip, people]);
 
   return (
@@ -183,9 +188,9 @@ const App = () => {
           <div className="container2">
             <div className="column-result">
               <div className="row-result1">
-                <p>Tip Amount</p>
+                <p className="text-result">Tip Amount</p>
                 <p className="per-person">/ person</p>
-                <p>Total</p>
+                <p className="text-result">Total</p>
                 <p className="per-person">/ person</p>
               </div>
               <div className="row-result2">
