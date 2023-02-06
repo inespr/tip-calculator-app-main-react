@@ -98,7 +98,7 @@ button{
 .buttons{
     display: grid;
     grid-gap: 7px;
-    grid-template-columns: 33.3% 33.3% 33.3%;
+    grid-template-columns: repeat(3, 1fr);
     justify-content: start;
 }
 
@@ -119,6 +119,7 @@ button:active{
     border: none;
     margin-bottom: 10px;
     font-size: 24px;
+    width: 100%;
     border-radius: 5%;
     background-color: $lightgray;
 }

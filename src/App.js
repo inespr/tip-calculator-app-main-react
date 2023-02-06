@@ -13,8 +13,6 @@ const App = () => {
 
   const [resultTotal, setResulttotal] = useState(0);
 
-
-
   function reset() {
     setBill("");
     setTip("");
