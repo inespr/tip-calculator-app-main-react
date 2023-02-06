@@ -54,6 +54,7 @@ input[type=number]:not(.custom){
     border: none;
     margin: 0; 
     width:100%;
+    box-sizing: border-box;
     text-align: right;
     font-size: 24px;
     border-radius: 5px;
@@ -93,6 +94,8 @@ button{
     border-radius: 5%;
     background-color: $strongblue;
     color: $white;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .buttons{
@@ -100,6 +103,8 @@ button{
     grid-gap: 7px;
     grid-template-columns: repeat(3, 1fr);
     justify-content: start;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 button:hover{
@@ -114,6 +119,12 @@ button:active{
     font-weight: bold;
 }
 
+.active{
+    background-color: $primary;
+    color: $strongblue;
+    font-weight: bold;
+}
+
 .custom{
     text-align: center;
     border: none;
@@ -122,6 +133,7 @@ button:active{
     width: 100%;
     border-radius: 5%;
     background-color: $lightgray;
+    box-sizing: border-box;
 }
 
 .column-container2{

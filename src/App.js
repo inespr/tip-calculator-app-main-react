@@ -1,6 +1,5 @@
 import "./AppStyle.scss";
 import React, { useState, useEffect} from "react";
-import { Value } from "sass";
 
 const App = () => {
   const [bill, setBill] = useState("");
@@ -24,6 +23,21 @@ const App = () => {
     document.getElementById("people").classList.remove('input-error');
   }
 
+  const array = document.querySelectorAll('.button');
+
+
+
+  function button(event){
+    setTip(event.target.id);
+    array.forEach(y => y.classList.remove('active'))
+    event.target.classList.add('active'); 
+
+    // if(document.getElementById == "tip"){
+    //   setTip(event.target.value)
+
+    // }
+  }
+
   useEffect(() => {
     if ((bill && tip && people)) {
       console.log(bill);
@@ -42,6 +56,7 @@ const App = () => {
       }else{
         document.getElementById("bill").classList.remove('input-error');
       } 
+
       if(people <= 0){
         document.getElementById("people").classList.add('input-error');
         document.getElementById("error").classList.replace('error-hidden', 'error');
@@ -51,9 +66,7 @@ const App = () => {
         document.getElementById("people").classList.remove('input-error');
         document.getElementById("error").classList.replace('error', 'error-hidden');
       }
-      
     }
-
   }, [bill, tip, people]);
 
   return (
@@ -97,7 +110,7 @@ const App = () => {
               value="5%"
               id="5"
               name="tip"
-              onClick={(event) => setTip(event.target.id)}
+              onClick={(event) => button(event)}
             >
               5%
             </button>
@@ -107,7 +120,7 @@ const App = () => {
               value="10%"
               id="10"
               name="tip"
-              onClick={(event) => setTip(event.target.id)}
+              onClick={(event) => button(event)}
             >
               10%
             </button>
@@ -117,7 +130,7 @@ const App = () => {
               value="15%"
               id="15"
               name="tip"
-              onClick={(event) => setTip(event.target.id)}
+              onClick={(event) => button(event)}
             >
               15%
             </button>
@@ -127,7 +140,7 @@ const App = () => {
               value="25%"
               id="25"
               name="tip"
-              onClick={(event) => setTip(event.target.id)}
+              onClick={(event) => button(event)}
             >
               25%
             </button>
@@ -137,7 +150,7 @@ const App = () => {
               value="50%"
               id="50"
               name="tip"
-              onClick={(event) => setTip(event.target.id)}
+              onClick={(event) => button(event)}
             >
               50%
             </button>
