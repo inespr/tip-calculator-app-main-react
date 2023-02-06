@@ -1,6 +1,5 @@
 import "./AppStyle.scss";
 import React, { useState, useEffect} from "react";
-import { Value } from "sass";
 
 const App = () => {
   const [bill, setBill] = useState("");
