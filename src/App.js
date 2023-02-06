@@ -21,6 +21,8 @@ const App = () => {
     document.getElementById("bill").classList.remove('input-error');
     document.getElementById("tip").classList.remove('input-error');
     document.getElementById("people").classList.remove('input-error');
+    document.getElementById("people").classList.remove('error');
+
   }
 
   const array = document.querySelectorAll('.button');
